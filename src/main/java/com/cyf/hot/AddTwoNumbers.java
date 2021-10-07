@@ -40,7 +40,7 @@ public class AddTwoNumbers {
         ListNode cur = result;
         //进数
         int carry = 0;
-        while (l1 != null || l2 != null) {
+        while (l1 != null || l2 != null || carry != 0) {
             int a = l1 == null ? 0 : l1.val;
             int b = l2 == null ? 0 : l2.val;
 
@@ -57,11 +57,6 @@ public class AddTwoNumbers {
                 l2 = l2.next;
             }
         }
-
-        if (carry == 1) {
-            cur.next = new ListNode(1);
-        }
-
         return result.next;
     }
 }
