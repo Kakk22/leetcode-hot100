@@ -37,34 +37,40 @@ public class BuildTree {
         return root;
     }
 
+    Map<Integer, Integer> map = new HashMap<>();
+
     /**
      * 通过数组下标完成
      * 查看resource/buildTree.img
      */
     public TreeNode buildTree_01(int[] preorder, int[] inorder) {
-        Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < inorder.length; i++) {
             map.put(inorder[i], i);
         }
 
-        return buildTree_01(preorder, 0, preorder.length - 1, map, 0, inorder.length - 1);
-
+        return buildTree_01(preorder, 0, preorder.length - 1, 0, inorder.length - 1);
     }
 
-    private TreeNode buildTree_01(int[] preorder, int preLeft, int preRight, Map<Integer, Integer> map, int inLeft, int inRight) {
-        if (preLeft > preRight || inLeft > inRight) {
+    public TreeNode buildTree_01(int[] preorder, int preLeft, int preRight, int inLeft, int inRight) {
+        if (preorder.length == 0 || preLeft > preRight || inLeft > inRight) {
             return null;
         }
-        int rootVal = preorder[0];
-        TreeNode node = new TreeNode(rootVal);
-        //中序遍历中的下标
-        Integer pIndex = map.get(rootVal);
 
-        node.left = buildTree_01(preorder, preLeft + 1, (pIndex - inLeft + preLeft), map, inLeft, pIndex - 1);
-        node.right = buildTree_01(preorder, pIndex - inLeft + preLeft + 1, preRight, map, pIndex + 1, inRight);
+        int preVal = preorder[preLeft];
+        TreeNode node = new TreeNode(preVal);
+        // 中数在中序数组的下标
+        int index = map.get(preVal);
+
+        //左子树节点数
+        int leftSize = index - inLeft;
+
+        //递归构建左子树 及前序列遍历数组中 除掉当前根节点(preLeft+1) 左子树的个数 leftSize = index - inLeft 得出
+        node.left = buildTree_01(preorder, preLeft + 1, preLeft + leftSize, inLeft, index);
+        //递归构建右子树
+        node.right = buildTree_01(preorder, preLeft + leftSize + 1, preRight, index + 1, inRight);
+
         return node;
     }
-
 
     public static void main(String[] args) {
 //        TreeNode treeNode = new BuildTree().buildTree(new int[]{3, 9, 20, 15, 7}, new int[]{9, 3, 15, 20, 7});
