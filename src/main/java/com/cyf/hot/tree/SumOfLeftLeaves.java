@@ -12,7 +12,9 @@ public class SumOfLeftLeaves {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
-        System.out.println(new SumOfLeftLeaves().sumOfLeftLeaves(root));
+        SumOfLeftLeaves sumOfLeftLeaves = new SumOfLeftLeaves();
+        sumOfLeftLeaves.sumOfLeftLeaves(root);
+        System.out.println(sumOfLeftLeaves.sum);
     }
 
 
@@ -24,9 +26,9 @@ public class SumOfLeftLeaves {
      * 当前节点的左节点不为空且是叶子节点则找到
      *
      */
-    public int sumOfLeftLeaves(TreeNode root) {
+    public void sumOfLeftLeaves(TreeNode root) {
         if(root == null){
-            return 0;
+            return;
         }
         //找到左叶子节点
         if(root.left != null && (root.left.left == null && root.left.right==null)){
@@ -34,6 +36,5 @@ public class SumOfLeftLeaves {
         }
         sumOfLeftLeaves(root.left);
         sumOfLeftLeaves(root.right);
-        return sum;
     }
 }
