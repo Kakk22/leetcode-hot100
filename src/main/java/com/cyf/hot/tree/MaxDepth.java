@@ -27,6 +27,10 @@ import com.cyf.node.TreeNode;
  * @date 2022/7/26 10:03 下午
  */
 public class MaxDepth {
+    /**
+     * 后序遍历
+     * 递归求左树深度和右树深度 取大的那个
+     */
     public int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;
