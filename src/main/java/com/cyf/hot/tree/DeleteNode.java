@@ -21,12 +21,13 @@ public class DeleteNode {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(5, new TreeNode(3, new TreeNode(2), new TreeNode(4)), new TreeNode(6, null, new TreeNode(7)));
         DeleteNode bean = new DeleteNode();
-        bean.deleteNode(root, 3);
+//        bean.deleteNode(root, 3);
+        bean.deleteNode(root, 0);
         System.out.println(root);
 
-        TreeNode root1 = new TreeNode(50, new TreeNode(30, null, new TreeNode(40)), new TreeNode(70, new TreeNode(60), new TreeNode(80)));
-        bean.deleteNode(root1, 50);
-        System.out.println(root1);
+//        TreeNode root1 = new TreeNode(50, new TreeNode(30, null, new TreeNode(40)), new TreeNode(70, new TreeNode(60), new TreeNode(80)));
+//        bean.deleteNode(root1, 50);
+//        System.out.println(root1);
     }
 
 
@@ -72,4 +73,5 @@ public class DeleteNode {
 
         return root;
     }
+
 }
