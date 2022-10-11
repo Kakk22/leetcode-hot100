@@ -21,7 +21,7 @@ public class IsSubStructure {
 
     //
     public boolean isSubStructure(TreeNode A, TreeNode B) {
-        if (A == null || B == null) {
+        if (A == null) {
             return false;
         }
         // 此处递归是为了找root一致的节点
