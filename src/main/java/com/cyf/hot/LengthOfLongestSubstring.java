@@ -1,7 +1,6 @@
 package com.cyf.hot;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 给定一个字符串 s ，请你找出其中不含有重复字符的最长子串的长度。
@@ -34,7 +33,8 @@ public class LengthOfLongestSubstring {
 //        System.out.println(LengthOfLongestSubstring.lengthOfLongestSubstring("pwwkew"));
 //        System.out.println(LengthOfLongestSubstring.lengthOfLongestSubstring("abcacebdfa"));
 //        System.out.println(LengthOfLongestSubstring.lengthOfLongestSubstring(" "));
-        System.out.println(LengthOfLongestSubstring.lengthOfLongestSubstring("abba"));
+//        System.out.println(LengthOfLongestSubstring.lengthOfLongestSubstring("abba"));
+        System.out.println((double) 29/2);
     }
 
     public static int lengthOfLongestSubstring(String s) {
@@ -42,6 +42,7 @@ public class LengthOfLongestSubstring {
             return 0;
         }
 
+        double d = (double)( 3/2);
         Map<Character, Integer> map = new HashMap<>(64);
         int max = 0;
         for (int start = 0, end = 0; end < s.length(); end++) {

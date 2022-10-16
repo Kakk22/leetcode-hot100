@@ -32,7 +32,7 @@ public class SortedArrayToBST {
             return null;
         }
         //表示奇数取中间 偶数取左边的数
-        int mid = left + ((right - left) / 2);
+        int mid = left  +((right - left) / 2);
         TreeNode node = new TreeNode(nums[mid]);
         node.left = buildTree(nums, left, mid - 1);
         node.right = buildTree(nums, mid + 1, right);
