@@ -40,7 +40,8 @@ public class IncreasingBST {
             return;
         }
         inorder(node.left);
-        currentNode.right = new TreeNode(node.val);
+        currentNode.right = node;
+        node.left = null;
         currentNode = currentNode.right;
         inorder(node.right);
     }
