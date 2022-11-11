@@ -24,7 +24,7 @@ public class InsertionSortList {
 
                 ListNode point = res;
                 while(point != null && point.next != null){
-                    if(target.val > point.val && target.val < point.next.val){
+                    if(target.val < point.next.val){
                         ListNode node = point.next;
                         point.next = target;
                         target.next = node;
