@@ -24,7 +24,22 @@ public class LengthOfLongestSubstring {
         System.out.println(bean.lengthOfLongestSubstring("abba"));
     }
 
-    public int lengthOfLongestSubstring(String s) {
+    public int lengthOfLongestSubstring(String s) {class Solution {
+        public boolean isPalindrome(int x) {
+            if(x < 0){
+                return false;
+            }
+
+            int ans = 0;
+            int cur = x;
+            while(cur > 0){
+                ans = ans * 10 + cur % 10;
+                cur = cur / 10;
+            }
+
+            return ans == x;
+        }
+    }
         if (s == null || s.length() == 0) {
             return 0;
         }
