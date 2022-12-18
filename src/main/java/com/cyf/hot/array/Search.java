@@ -33,6 +33,7 @@ public class Search {
     public static void main(String[] args) {
         Search bean = new Search();
         System.out.println(bean.search(new int[]{4, 5, 6, 7, 0, 1, 2}, 7));
+        System.out.println(bean.search(new int[]{4, 5, 6, 7, 0, 1, 2}, 8));
         System.out.println(bean.search(new int[]{4, 5, 6, 7, 0, 1, 2}, 0));
         System.out.println(bean.search(new int[]{4, 5, 6, 7, 0, 1, 2}, 3));
         System.out.println(bean.search(new int[]{1}, 1));
