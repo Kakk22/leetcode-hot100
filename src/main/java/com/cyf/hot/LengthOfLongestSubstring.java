@@ -31,9 +31,9 @@ public class LengthOfLongestSubstring {
 
     public static void main(String[] args) {
 //        System.out.println(LengthOfLongestSubstring.lengthOfLongestSubstring("pwwkew"));
-//        System.out.println(LengthOfLongestSubstring.lengthOfLongestSubstring("abcacebdfa"));
+//        System.out.println(LengthOfLongestSubstring.lengthOfLongestSubstring("abcacebda"));
 //        System.out.println(LengthOfLongestSubstring.lengthOfLongestSubstring(" "));
-//        System.out.println(LengthOfLongestSubstring.lengthOfLongestSubstring("abba"));
+        System.out.println(LengthOfLongestSubstring.lengthOfLongestSubstring("abba"));
         System.out.println((double) 29/2);
     }
 
@@ -42,7 +42,6 @@ public class LengthOfLongestSubstring {
             return 0;
         }
 
-        double d = (double)( 3/2);
         Map<Character, Integer> map = new HashMap<>(64);
         int max = 0;
         for (int start = 0, end = 0; end < s.length(); end++) {
@@ -50,6 +49,7 @@ public class LengthOfLongestSubstring {
             if (map.containsKey(c)) {
                 start = Math.max(start, map.get(c) + 1);
             }
+            //每次都更新当前值的最大索引
             map.put(c, end);
             max = Math.max(max, end - start + 1);
         }
