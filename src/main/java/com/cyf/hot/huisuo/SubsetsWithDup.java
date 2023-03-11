@@ -27,8 +27,10 @@ import java.util.List;
 public class SubsetsWithDup {
 
     public static void main(String[] args) {
-        SubsetsWithDup bean = new SubsetsWithDup();
-        System.out.println(bean.subsetsWithDup(new int[]{1, 2, 2}));
+//        SubsetsWithDup bean = new SubsetsWithDup();
+//        System.out.println(bean.subsetsWithDup(new int[]{1, 2, 2}));
+
+        System.out.println(21 % 10);
     }
 
     public List<List<Integer>> subsetsWithDup(int[] nums) {
