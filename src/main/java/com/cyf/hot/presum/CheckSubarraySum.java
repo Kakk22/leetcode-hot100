@@ -49,7 +49,7 @@ public class CheckSubarraySum {
         for (int num : nums) {
             sum += num;
             // sum 是前 i+1 项和，每次加入集合的是前 i 项和的模。 当两个前缀和*关于模 k 同余*时，它们的差值就是满足条件的子数组和、
-            // 29 % 6 = 5  23 % 6 = 5   29和23的差值 就是中间的子数组和
+            // 29 % 6 = 5  23 % 6 = 5   29和23的差值 就是中间的子数组和 2 和 4 的和
             if (set.contains(sum % k)) {
                 return true;
             }
